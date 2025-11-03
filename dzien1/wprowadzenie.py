@@ -213,3 +213,67 @@ licznik = 0
 while licznik < 10:
     licznik += 1
     print("Komunikat 2!!")
+
+przekaski = ['hotdog', 'pizza', 'hamburger', 'frytki']
+prompt = "Wybierz swoja przekąskę"
+
+# while True:
+#     choice = input(prompt)
+#     if choice in przekaski:
+#         break
+#     print("Nie ma")
+# print("Dalsza część programu")
+
+# walrus operator, operator morsa
+# while (choice := input(prompt)) not in przekaski:
+#     if choice == "exit":
+#         break
+#     print("Nie ma")
+
+name = "Radek"
+a = len(name)
+if a > 4:
+    print("długość większa od 4, wynosi:", a)
+
+if (a := len(name)) > 4:
+    print("długość większa od 4, wynosi:", a)
+# długość większa od 4, wynosi: 5
+# długość większa od 4, wynosi: 5
+
+odp = "Radek"
+if odp == "radek":
+    print("Radek")
+elif odp == "Tomek":
+    print("tomek")
+else:  # wartośc domyslna, w innym przypadku
+    print("Nie znam Cię")
+# Nie znam Cię
+
+# od pythona 3.10 match case
+odp = input("Podaj imię")
+# strip() - usunięcie białych znaków
+match odp.casefold().strip().capitalize():
+    case "Radek":
+        print("Ok")
+    case "Tomek":
+        print("Tez Ok")
+    case _:  # odpowiednik else
+        print("Nie znam")
+
+name1 = "GROSS"
+name2 = "groẞ"  # ẞ -> ss
+
+print(name1.lower() == name2.lower())  # False
+#  """ Return a version of the string suitable for caseless comparisons. """
+print(name1.casefold() == name2.casefold())  # True
+
+# dane = [1, 2, 3]
+dane = {'nazwa': "Radek", "wiek": 45}
+match dane:
+    case [a, b, c]:
+        print(f"Lista z trzema elementami: {a=}, {b=}, {c=}")
+    case {"nazwa": n, "wiek": w}:
+        print(f"Słownik eprezentujący osobe: {n}, wiek: {w}")
+    case _:
+        print("Błędny typ danych")
+# Lista z trzema elementami: a=1, b=2, c=3
