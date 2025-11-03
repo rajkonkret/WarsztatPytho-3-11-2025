@@ -100,3 +100,25 @@ print(max(map(lambda c: (c[1], c), lata)))  # (33.12, (2001, 33.12))
 # 33.12
 print(max(map(lambda c: c[1], lata)))  # 33.12
 print(max(map(lambda c: (c[1], c[0]), lata)))  # (33.12, 2001)
+
+a = 10
+
+
+def funkcja_glob():
+    a = 15  # zmienna o zasiegu lokalnym
+    # nie zmienia wartości zmiennej globalnej o tej samej nazwie
+    print(a)
+
+
+funkcja_glob()  # 15
+print(a)  # 10
+
+
+def funkcja_glob2():
+    global a  # użyj zmiennej globalnej
+    a = 15
+    print(a)
+
+
+funkcja_glob2()  # 15
+print(a)  # 15, a globalne zostało zmienione
