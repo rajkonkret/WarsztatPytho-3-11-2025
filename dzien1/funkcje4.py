@@ -132,3 +132,21 @@ print("Wynik reduce x + y:", wynik)  # Wynik reduce x + y: 15
 liczby = [1, 2, 3, 4, 5]
 wynik = reduce(lambda x, y: x * y, liczby)
 print("Wynik reduce x * y:", wynik)  # Wynik reduce x * y: 120
+
+
+@lru_cache(maxsize=1000)  # dekorator
+def fib_cached(n):
+    if n < 2:
+        return n
+    return fib_cached(n - 1) + fib_cached(n - 2)
+
+
+print(fib_cached(10))  # 55
+print(fib_cached.cache_info())  # CacheInfo(hits=8, misses=11, maxsize=1000, currsize=11)
+print(fib_cached(10))
+print(fib_cached.cache_info())  # CacheInfo(hits=9, misses=11, maxsize=1000, currsize=11)
+print(fib_cached(15))  # 610
+print(fib_cached.cache_info())  # CacheInfo(hits=15, misses=16, maxsize=1000, currsize=16)
+
+fib_cached.cache_clear()  # CacheInfo(hits=0, misses=0, maxsize=1000, currsize=0)
+print(fib_cached.cache_info())
