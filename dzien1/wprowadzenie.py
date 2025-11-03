@@ -147,3 +147,69 @@ del miasto
 # print(miasto)  # NameError: name 'miasto' is not defined
 # garbage collector - odsmiecacz
 
+# zbior, set - nie przechowuje duplikatów
+# nie zachowuje kolejności, nie posuiada indeksu
+drzewa = {"jodła", "buk", "Świerk", "dąb", "klon"}
+print(drzewa)  # {'Świerk', 'klon', 'jodła', 'buk', 'dąb'}
+
+drzewa.add("osika")
+print(drzewa)  # {'klon', 'dąb', 'jodła', 'osika', 'buk', 'Świerk'}
+print(type(drzewa))  # <class 'set'>
+
+lista = [1, 2, 3, 4, 4, 5, 5, 6, 1, 2, 3]
+zbior = set(lista)
+print(zbior)  # {1, 2, 3, 4, 5, 6, gubimy kolejność
+
+pusty_zbior = set()  # tworzene pustego zbior
+print(pusty_zbior)  # set()
+print(type(pusty_zbior))  # <class 'set'>
+
+# slownik - para typu: klucz - wartość
+pusty_slownik = {}
+print(type(pusty_slownik))  # <class 'dict'>
+print(pusty_slownik)  # {}
+
+pusty_slownik = dict()
+print(type(pusty_slownik))  # <class 'dict'>
+print(pusty_slownik)  # {}
+
+osoba = {
+    "id": 89,
+    "imie": "Tadeusz",
+    "rok urodzenia": 1976,
+    "miasto": "Łódź",
+}
+
+print(osoba)
+# {'id': 89, 'imie': 'Tadeusz', 'rok urodzenia': 1976, 'miasto': 'Łódź'}
+print(type(osoba))  # <class 'dict'>
+print(osoba['miasto'])  # Łódź
+# print(osoba['Miasto'])  # KeyError: 'Miasto'
+print(osoba.get("miasto"))  # Łódź
+print(osoba.get("Miasto"))  # None, gdy nie ma klucza
+print(osoba.get("Miasto", "default"))  # default, gdy nie znajdzie klucza
+osoba['imie'] = "Radek"
+print(osoba)  # {'id': 89, 'imie': 'Radek', 'rok urodzenia': 1976, 'miasto': 'Łódź'}
+
+print(osoba.keys())  # dict_keys(['id', 'imie', 'rok urodzenia', 'miasto'])
+print(osoba.values())  # dict_values([89, 'Radek', 1976, 'Łódź'])
+print(osoba.items())  # dict_items([('id', 89), ('imie', 'Radek'), ('rok urodzenia', 1976), ('miasto', 'Łódź')])
+
+lista = [1, 2, 3, 4, 4, 5, 5, 6, 1, 2, 3]
+print(dict.fromkeys(lista))  # nie zamienia kolejności
+# {1: None, 2: None, 3: None, 4: None, 5: None, 6: None}
+print(list(dict.fromkeys(lista)))  # [1, 2, 3, 4, 5, 6]
+
+# petla
+# while - sterowana warunkiem
+licznik = 0
+while True:
+    print("Komunikat!")
+    licznik += 1
+    if licznik > 10:
+        break  # przerywa pętlę
+
+licznik = 0
+while licznik < 10:
+    licznik += 1
+    print("Komunikat 2!!")
