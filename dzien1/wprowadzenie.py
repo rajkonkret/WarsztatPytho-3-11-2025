@@ -146,3 +146,4 @@ print(miasto.count("Łódź"))  # występuje 1 raz
 del miasto
 # print(miasto)  # NameError: name 'miasto' is not defined
 # garbage collector - odsmiecacz
+
