@@ -1,3 +1,5 @@
+from functools import reduce
+
 transactions = [
     {"id": 1, "type": "income", "amount": 1000, "currency": "USD"},
     {"id": 2, "type": "expense", "amount": 200, "currency": "USD"},
@@ -16,15 +18,19 @@ transactions = [
 # raport
 
 def filter_transactions(transactions, transoction_type):
-    pass
+    # pass
+    return list(filter(lambda x: x['type'] == transoction_type, transactions))
 
 
 def map_transactions(filtered, currency):
-    pass
+    # pass
+    # operator warunkowy
+    return list(map(lambda x: x['amount'] if x["currency"] == currency else 0))
 
 
 def reduce_transactions(mapped):
-    pass
+    # pass
+    return reduce(lambda x, y: x + y, transactions, 0)
 
 
 def process_transactions(transactions, transoction_type, currency):
