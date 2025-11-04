@@ -120,3 +120,24 @@ spam %= 1    spam = spam % 1
 https://www.hackerrank.com/domains/python?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=python
 https://pl.altapps.net/soft/hackerrank-com
 https://naukapythona.com.pl/
+
+Wartość liczby zmiennoprzecinkowej jest obliczana według wzoru:
+
+x
+=
+S
+M
+B
+E
+,
+{\displaystyle x=SMB^{E},}
+gdzie:
+
+S
+{\displaystyle S} (ang. sign) – znak liczby, 1 lub −1,
+M
+{\displaystyle M} (ang. mantissa) – znormalizowana mantysa, liczba ułamkowa[1],
+B
+{\displaystyle B} (ang. base) – podstawa systemu liczbowego[1] (2 dla systemów komputerowych),
+E
+{\displaystyle E} (ang. exponent) – wykładnik, cecha, liczba całkowita[1].
