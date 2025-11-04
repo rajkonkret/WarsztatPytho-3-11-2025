@@ -106,3 +106,13 @@ for i, n in fibo_with_index(10):
 # Pozycja: 7, element: 13
 # Pozycja: 8, element: 21
 # Pozycja: 9, element: 34
+
+person = ["Radek", "Tomek", "Zenek", "Ania", "Kasia"]
+wiek = [34, 56, 57, 89]
+
+for p, w in zip(person, wiek):
+    print(p, w)
+# Radek 34
+# Tomek 56
+# Zenek 57
+# Ania 89
