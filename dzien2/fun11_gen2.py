@@ -71,5 +71,38 @@ except StopIteration:
     print("Koniec danych")
 except Exception as e:
     print("Bład:", e)
+
+
 # stop
 # Koniec danych
+
+
+def fibo_with_index(n):
+    a, b = 0, 1
+    for ind in range(n):
+        yield ind, a
+        a, b = b, a + b
+
+
+fib = fibo_with_index(10)
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
+# (0, 0)
+# (1, 1)
+# (2, 1)
+# (3, 2)
+
+for i, n in fibo_with_index(10):
+    print(f"Pozycja: {i}, element: {n}")
+# Pozycja: 0, element: 0
+# Pozycja: 1, element: 1
+# Pozycja: 2, element: 1
+# Pozycja: 3, element: 2
+# Pozycja: 4, element: 3
+# Pozycja: 5, element: 5
+# Pozycja: 6, element: 8
+# Pozycja: 7, element: 13
+# Pozycja: 8, element: 21
+# Pozycja: 9, element: 34
