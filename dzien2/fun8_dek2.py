@@ -78,7 +78,29 @@ print(greeting3("Python"))
 # Podałeś: Python
 
 print(greeting3.__name__)  # wrapper
+
+
 # po dodaniu @wraps() -> greeting3
 # __name__
 # __doc__
 # __qualname__
+
+def dekor_z_arg(slowo):
+    def dekor(func):
+        def wew():
+            print("Dekorator przekazał:", slowo)
+            return func()
+
+        return wew
+
+    return dekor
+
+
+@dekor_z_arg("HeLO")
+def funkcja_argument():
+    print('Oryginalna funkcja')
+
+
+funkcja_argument()
+# Dekorator przekazał: HeLO
+# Oryginalna funkcja
