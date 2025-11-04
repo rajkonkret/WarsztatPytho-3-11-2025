@@ -1,4 +1,5 @@
 import time
+from itertools import zip_longest
 
 
 def wznowienie(n, k):
@@ -116,3 +117,32 @@ for p, w in zip(person, wiek):
 # Tomek 56
 # Zenek 57
 # Ania 89
+
+print(20 * "-")
+zipped = zip_longest(person, wiek, fillvalue="Brak danych")
+print(zipped)  # <itertools.zip_longest object at 0x000001AE8EED0400>
+
+lista = list(zipped)  # wyczerpalismy dane z generatora
+print(25 * "-")
+for imie, wiek in zipped:
+    print(imie, wiek)
+# -------------------------
+# Radek 34
+# Tomek 56
+# Zenek 57
+# Ania 89
+# Kasia Brak danych
+print(25 * "-")
+for imie, wiek in zipped:
+    print(imie, wiek)
+# dane wyczerpane
+# -------------------------
+for imie, wiek in lista:
+    print(imie, wiek)
+# -------------------------
+# -------------------------
+# Radek 34
+# Tomek 56
+# Zenek 57
+# Ania 89
+# Kasia Brak danych
