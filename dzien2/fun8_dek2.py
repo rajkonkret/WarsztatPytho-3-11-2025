@@ -5,6 +5,7 @@
 
 # pip install colorama
 from colorama import Fore, Style, init
+from functools import wraps
 
 init(autoreset=True)
 
@@ -27,6 +28,7 @@ def bold_decorator(func):
 
 
 def color_decorator(func):
+    @wraps(func)  # przekazuje metadane do dekoratora
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
         return Fore.RED + result + Style.RESET_ALL
@@ -74,3 +76,9 @@ def greeting3(string):
 
 print(greeting3("Python"))
 # Podałeś: Python
+
+print(greeting3.__name__)  # wrapper
+# po dodaniu @wraps() -> greeting3
+# __name__
+# __doc__
+# __qualname__
