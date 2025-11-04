@@ -7,3 +7,29 @@ transactions = [
     {"id": 6, "type": "expense", "amount": 400, "currency": "EUR"},
     {"id": 7, "type": "income", "amount": 100, "currency": "EUR"},
 ]
+
+
+# wyciągnięcie typu
+# przemapowanie -> jesli ealuta inna niz zadana -> wstaw kwote 0 -> lista
+# zsumujemy tak przygotane transakcje -> reduce
+
+# raport
+
+def filter_transactions(transactions, transoction_type):
+    pass
+
+
+def map_transactions(filtered, currency):
+    pass
+
+
+def reduce_transactions(mapped):
+    pass
+
+
+def process_transactions(transactions, transoction_type, currency):
+    filtered = filter_transactions(transactions, transoction_type)
+    mapped = map_transactions(filtered, currency)
+    total = reduce_transactions(mapped)
+
+    return total
