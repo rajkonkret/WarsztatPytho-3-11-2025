@@ -1,3 +1,5 @@
+import pytest
+
 import transakcje as tr
 
 # assert - asrecja
@@ -66,6 +68,8 @@ def test_transaction_processing():
 def test_map_transactions_usd_wrong():
     wrong = [1, 2, 3]
     assert tr.map_transactions(tr.transactions, "USD") == wrong
+
+
 # ========================================================================================================= FAILURES ==========================================================================================================
 # ______________________________________________________________________________________________ test_map_transactions_usd_wrong ______________________________________________________________________________________________
 #
@@ -84,3 +88,16 @@ def test_map_transactions_usd_wrong():
 # E         ...Full output truncated (13 lines hidden), use '-vv' to show
 #
 # tests\test_transakcje.py:67: AssertionError
+
+# test parametryzowany dla process_transactions
+@pytest.mark.parametrize(
+    "kind,currency,expected",
+    [
+        ("income", "USD", 1000 + 500 + 700),
+        ("income", "EUR", 100),
+        ("expense", "USD", 200 + 300),
+        ("expense", "EUR", 400),
+    ]
+)
+def test_process_transactions_param(kind, currency, expected):
+    assert tr.process_transactions(tr.transactions, kind, currency) == expected

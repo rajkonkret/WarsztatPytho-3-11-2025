@@ -20,7 +20,8 @@ def test_divide_ok(a, b, expected):
 @pytest.mark.parametrize("a,b",
                          [
                              (1, 0),
-                             (5, 0)
+                             (5, 0),
+                             # (5, 1)
                          ]
                          )
 def test_divide_raises(a, b):
