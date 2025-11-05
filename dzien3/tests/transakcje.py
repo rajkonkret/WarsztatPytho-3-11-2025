@@ -43,7 +43,7 @@ def process_transactions(transactions, transoction_type, currency):
 
 # def test_transaction_processing():
 #     assert map_transactions(filter_transactions(transactions, "income"), "USD") == [1000, 500, 700, 0]
-#
+
 
 if __name__ == '__main__':
     print(process_transactions(transactions, "expense", "EUR"))  # 400
@@ -74,3 +74,4 @@ if __name__ == '__main__':
 # transakcje.py::test_transaction_processing PASSED                                                                                                                                                                      [100%]
 #
 # =
+
