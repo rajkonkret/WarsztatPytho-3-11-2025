@@ -98,3 +98,10 @@ pprint(Contact.all_contacts)
 #  Kasia kasia@onet.pl +48000000000,
 #  Kamil kamil@onet.pl +48000000000,
 #  Aneta aneta@wp.pl +48768900877]
+
+# kolejnosc rozwiązywania nazw metod(pól) dla obiektu
+pprint(Friend.__mro__)
+# (<class '__main__.Friend'>,
+#  <class '__main__.Suplier'>,
+#  <class '__main__.Contact'>,
+#  <class 'object'>)
