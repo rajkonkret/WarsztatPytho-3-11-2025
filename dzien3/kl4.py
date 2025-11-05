@@ -15,6 +15,24 @@ d1 = DefaultDict()
 print(type(d1))
 print(d1)
 print(d1['name'])
-# <class '__main__.DefaultDict'>
+
+
+# <class '__main__.DefaultDict'>kur
 # {}
 # Default
+
+# słownik w którym gdy nie ma klucza, tworzy taki klucz z wartością domyślną np.: 0
+class AutoKeyDict(dict):
+    def __missing__(self, key):
+        self[key] = 0
+        return key
+
+
+a1 = AutoKeyDict()
+print(a1)
+print(a1['name'])
+# {}
+# name
+print(a1)  # {'name': 0}
+
+
