@@ -30,9 +30,37 @@ class AutoKeyDict(dict):
 
 a1 = AutoKeyDict()
 print(a1)
-print(a1['name'])
 # {}
-# name
+print(a1['name'])
 print(a1)  # {'name': 0}
 
+a2 = AutoKeyDict()
+a2["age"] = 34
+print(a2)
+# {}
+print(a2['name'])
+print(a2)  # {'name': 0}
 
+
+# {'age': 34}
+# name
+# {'age': 34, 'name': 0}
+
+
+# zmienia klucze na małe litery
+class CaseInsensitiveDict(dict):
+    def __missing__(self, key):
+        # return self.get(key.lower())
+        if isinstance(key, str):
+            return self[key.lower()]
+        return key
+
+
+c1 = CaseInsensitiveDict()
+c1['name'] = "Radek"
+print(c1)  # {'name': 'Radek'}
+print(c1['Name'])  # Radek
+print(c1[1])  # 1
+c1[1] = "tekst"
+print(c1)  # {'name': 'Radek', 1: 'tekst'}
+print(c1[1])  # tekst
