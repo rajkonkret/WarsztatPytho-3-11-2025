@@ -28,6 +28,33 @@ def audit(action: str):
     return deco
 
 
+def validate_isbn(param_name: str = "isbn"):
+    def deco(fn):
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            if param_name in kwargs:
+                raw = str(kwargs[param_name])
+                clean = raw.replace("-", "").strip()
+                if len(clean) != 10 or not clean.isdigit():
+                    raise ValueError("ISBN musi mieć dokłądnie 10 cyfr.")
+                kwargs[param_name] = clean
+                return fn(*args, **kwargs)
+
+            if len(args) < 2:
+                raise ValueError("Brak argumentu ISBN.")
+            raw = str(args[1])
+            clean = raw.replace("-", "").strip()
+            if len(clean) != 10 or not clean.isdigit():
+                raise ValueError("ISBN musi mieć dokłądnie 10 cyfr.")
+            new_args = list(args)
+            new_args[1] = clean
+            return fn(*tuple(new_args), **kwargs)
+
+        return wrapper
+
+    return deco
+
+
 class Book:
     def __init__(self, title, author, isbn):
         self.title = title
@@ -58,6 +85,7 @@ class Library:
     def fun_dodaj_ksiazke(self, book: "Book"):
         self.dostepne_ksiazki.append(book)
 
+    @validate_isbn("isbn")
     @audit("zwrócono")
     def fun_wypozycz_ksiazke(self, isbn):
         for book in self.dostepne_ksiazki:
@@ -116,3 +144,6 @@ while True:
         print(biblioteka._audit_log)
     except Exception as e:
         print("Błąd:", e)
+# Wybierz oopcje:2
+# Podaj ISBN książki, ktorą chesz wypozyczyć:1234567890
+# Błąd: Nie ma takiej ksiazki
