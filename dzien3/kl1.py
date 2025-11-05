@@ -42,6 +42,9 @@ class MyFirstClass:
     def __str__(self):
         return f"{self.x, self.y}"
 
+    def __repr__(self):  # reprezentacja obiektu
+        return f"{self.__class__.__name__}{self.x, self.y}"
+
 
 ob = MyFirstClass()
 print(ob)  # <__main__.MyFirstClass object at 0x00000173F52C6F90>
@@ -82,3 +85,11 @@ print(lista)
 # <__main__.MyFirstClass object at 0x000002B313BB8F50>,
 # <__main__.MyFirstClass object at 0x000002B31392A190>,
 # <__main__.MyFirstClass object at 0x000002B313929E00>]
+# __str__ -> print(), str()
+# __repr__ - bardziej użyteczna dla programisty
+# [MyFirstClass((0, 0)),
+# MyFirstClass((87, 90)),
+# MyFirstClass((43, 21)),
+# MyFirstClass((13, 89))]
+# [MyFirstClass(0, 0), MyFirstClass(87, 90),
+# MyFirstClass(43, 21), MyFirstClass(13, 89)]
