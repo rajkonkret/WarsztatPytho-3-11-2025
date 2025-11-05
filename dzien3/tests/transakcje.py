@@ -75,3 +75,6 @@ if __name__ == '__main__':
 #
 # =
 
+# test parametryzowany dla process_transactions
+
+
