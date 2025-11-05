@@ -16,6 +16,7 @@ b = B()
 b.method()  # Metoda z klasy B
 
 
+# można dziedziczyc po wielu klasach
 class C(B, A):
     """
     Klasa dziedziczy po klasie B i A
@@ -71,6 +72,27 @@ class G(A, B):
 
 g = G()
 g.method()  #
+
+
+# problem dziedziczenia po wielu klasach
+# kolejnośc dziedziczenia ma znaczenie
 # Metoda z klasy A
 # dopisane
 # Metoda z klasy B
+# class H(A, F):
+#     def method(self):
+#         super().method()  # super() - możemy użyć super, tutaj klasa: A
+#         print('dopisane')
+#         B.method(self)
+
+
+# print(H.__mro__)  # TypeError: Cannot create a consistent method resolution order (MRO) for bases A, F
+class H(F, A):
+    def method(self):
+        super().method()  # super() - możemy użyć super, tutaj klasa: A
+        print('dopisane')
+        B.method(self)
+
+
+print(H.__mro__)
+# (<class '__main__.H'>, <class '__main__.F'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
