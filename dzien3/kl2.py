@@ -17,7 +17,7 @@ class Contact:
 # dziedziczenie
 class Suplier(Contact):
     """
-    Klasa dziedziczy po kalsie Contact
+    Klasa dziedziczy po klasie Contact
     """
 
     def order(self, order):
@@ -29,6 +29,7 @@ print(c1)  # Adam admin@wp.pl
 c2 = Contact("Radek", "radek@wp.pl")
 c3 = Contact("Tomek", "tomek@wp.pl")
 print(c1.all_contacts)  # [Adam admin@wp.pl, Radek radek@wp.pl, Tomek tomek@wp.pl]
+# bez obiektu
 print(Contact.all_contacts)  # [Adam admin@wp.pl, Radek radek@wp.pl, Tomek tomek@wp.pl]
 
 sup1 = Suplier("Marek", "marek@wp.pl")
@@ -37,3 +38,10 @@ print(sup1.all_contacts)
 # [Adam admin@wp.pl, Radek radek@wp.pl, Tomek tomek@wp.pl, Marek marek@wp.pl]
 # c1.order() # AttributeError: 'Contact' object has no attribute 'order'
 sup1.order("kawa")  # kawa zamówiono od Marek
+
+print(c1)
+print(c2)
+print(c3)
+# Adam admin@wp.pl
+# Radek radek@wp.pl
+# Tomek tomek@wp.pl
