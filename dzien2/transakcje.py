@@ -41,5 +41,36 @@ def process_transactions(transactions, transoction_type, currency):
     return total
 
 
+def test_transaction_processing():
+    assert map_transactions(filter_transactions(transactions, "income"), "USD") == [1000, 500, 700, 0]
+
+
 if __name__ == '__main__':
     print(process_transactions(transactions, "expense", "EUR"))  # 400
+
+# pip install pytest
+# Testing started at 08:23 ...
+# Launching pytest with arguments C:\Users\CSComarch\PycharmProjects\WarsztatPytho-3-11-2025\dzien2\transakcje.py --no-header --no-summary -q in C:\Users\CSComarch\PycharmProjects\WarsztatPytho-3-11-2025\dzien2
+#
+# ============================= test session starts =============================
+# collecting ... collected 1 item
+#
+# transakcje.py::test_transaction_processing PASSED                        [100%]
+#
+# ============================== 1 passed in 0.07s ==============================
+#
+# Process finished with exit code 0
+
+
+# pytest .\transakcje.py
+# pytest -v .\transakcje.py - bardziej szczegółowe
+# (.venv) PS C:\Users\CSComarch\PycharmProjects\WarsztatPytho-3-11-2025\dzien2> pytest -v .\transakcje.py
+# ==================================================================================================== test session starts ====================================================================================================
+# platform win32 -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\CSComarch\PycharmProjects\WarsztatPytho-3-11-2025\.venv\Scripts\python.exe
+# cachedir: .pytest_cache
+# rootdir: C:\Users\CSComarch\PycharmProjects\WarsztatPytho-3-11-2025\dzien2
+# collected 1 item
+#
+# transakcje.py::test_transaction_processing PASSED                                                                                                                                                                      [100%]
+#
+# =
