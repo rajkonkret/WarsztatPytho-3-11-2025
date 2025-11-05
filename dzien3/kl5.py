@@ -25,6 +25,7 @@ art = LongestKeyDictMax()
 art['tomasz'] = 12
 art['abraham'] = 8
 art['zen'] = 2
+# art[1] = 2
 
 print(art.longest_key())  # abraham
 
