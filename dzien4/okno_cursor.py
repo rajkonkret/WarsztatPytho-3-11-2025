@@ -19,7 +19,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()import tkinter as tk
+    main()
+import tkinter as tk
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
@@ -75,8 +76,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-
-

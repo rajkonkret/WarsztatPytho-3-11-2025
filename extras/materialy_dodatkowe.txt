@@ -144,3 +144,9 @@ E
 
 
 pip freeze > requirements.txt
+pip install -r requirements.txt
+#  pip install pyinstaller
+pyinstaller --onefile nazwa_skryptu.py
+# pyinstaller --onefile --noconsole .\okno_cursor.py
+#  pip install nuitka
+# nuitka --standalone --onefile --windows-disable-console .\okno_cursor.py
