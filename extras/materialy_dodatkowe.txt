@@ -141,3 +141,6 @@ B
 {\displaystyle B} (ang. base) – podstawa systemu liczbowego[1] (2 dla systemów komputerowych),
 E
 {\displaystyle E} (ang. exponent) – wykładnik, cecha, liczba całkowita[1].
+
+
+pip freeze > requirements.txt
