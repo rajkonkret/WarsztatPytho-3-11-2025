@@ -28,4 +28,4 @@ def my_function(x: int, y: int) -> float:
 print(my_function(3, 5))
 # print(my_function(3, 5.9)) # MyTypeError: Y must be integer
 # print(my_function(9.9, 9)) # MyTypeError: X must be integer
-print(my_function(5, 0))  # MyValueError: Y cannot be zero
+# print(my_function(5, 0))  # MyValueError: Y cannot be zero
