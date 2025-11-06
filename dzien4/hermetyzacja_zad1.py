@@ -38,6 +38,8 @@ boat.speedometer()
 # All tested!
 # Speed is 50 knots.
 # Speed is 50 knots.
+
+# metoda prywatna nie jest widoczna poza klasą
 # boat.__test()  # AttributeError: 'Boat' object has no attribute '__test'
 # enkaspulacaj - hermetyzacja i wystawianie metod do zapisu i odczytu wartości pól
 # settery, gettery
