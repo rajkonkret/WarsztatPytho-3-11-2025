@@ -20,3 +20,11 @@ class SQLiteCM:
         if self.conn:
             self.conn.commit()
             self.conn.close()
+
+
+db_name = "sqlite_cm.db"
+with SQLiteCM(db_name) as conn:
+    cursor = conn.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,name TEXT);")
+    # cursor.execute("INSERT INTO users (id, name) VALUES ('1', 'John');")
+    cursor.execute("INSERT INTO users (name) VALUES (?);", ("John",))
